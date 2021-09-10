@@ -140,21 +140,21 @@ class LinkedList {
     }
 
     insert(value, index) {
-        let previous = null
-        let current = this.head
-        let currentIndex = 0
-
         // If index is 0, negative or falsy, we'll insert the node at the beginning
         if (index <= 0 || !index) {
             this.length++
             return this.prepend(value)
         }
-
+        
         // If index is at or past the end, insert node at the end
         if (index >= this.length) {
             this.length++
             return this.append(value)
         }
+        
+        let previous = null
+        let current = this.head
+        let currentIndex = 0
 
         let node = makeNode(value)
 
